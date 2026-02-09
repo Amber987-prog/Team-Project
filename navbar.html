@@ -1,0 +1,91 @@
+<nav class="navbar">
+  <ul class="menu">
+    <li class="item">
+      <a href="">Lessons</a>
+      <ul class="dropdown">
+        <li>
+          <a href="">KS3</a>
+          <ul class="dropdown">
+            <li><a href="">Lesson 1</a></li>
+            <li><a href="">Lesson 2</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="">GCSE</a>
+          <ul class="dropdown">
+            <li><a href="">Lesson 1</a></li>
+            <li><a href="">Lesson 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li class="item"><a href="">Quizzes</a></li>
+    <li class="item"><a href="">About us</a></li>
+    <li class="item"><a href="">Contact us</a></li>
+  </ul>
+</nav>
+
+</body>
+</html>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.navbar {
+  background: #57c0c2;
+  padding: 15px 30px;
+  text-align: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.item {
+  position: relative;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.menu a:hover {
+  background: #357475;
+}
+
+.dropdown {
+  display: none;          
+  position: absolute;
+  background: #4ea5a7;
+  list-style: none;
+  padding: 8px;
+  border-radius: 12px;
+  min-width: 110px;
+}
+
+.item:hover > .dropdown,
+.dropdown li:hover > .dropdown {
+  display: block;
+}
+
+.dropdown li {
+  position: relative;
+}
+.dropdown .dropdown {
+  top: 0;
+  left: 100%;
+}
+</style>
