@@ -1,62 +1,267 @@
-<!--Contact Us page-->
-<!--Nav bar etc will go here at top-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+
+ 
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Nav bar will go here -->
+
+  <main>
+
+    <section class="contact-hero">
+      <h1>Contact Us</h1>
+      <p>
+        Have questions? We'd love to hear from you. Please use the form below to get in touch with us.
+      </p>
+    </section>
+
+    <section class="contact-info">
+
+      <div class="contact-box">
+        <h2>Map / Location</h2>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2424.9107120939702!2d-0.23781742307013665!3d52.5712259324353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877f23d79c807d3%3A0xadf5a3c02aef1b1b!2sARU%20Peterborough!5e0!3m2!1sen!2suk!4v1771429199141!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <p>
+          University House, Bishop's Rd<br />
+          Peterborough PE1 5BW
+        </p>
+      </div>
+
+      <div class="contact-box">
+        <h2>Contact Details</h2>
+
+        <p><strong>Email:</strong> glw133@student.aru.ac.uk</p>
+        <p><strong>Phone:</strong> +44 1245 493131</p>
+
+        <p class="note">
+          Messages submitted on this page are for demonstration purposes only.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="contact-form-section">
+      <h2>Send Us a Message</h2>
+
+      <form class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Footer will go here -->
+
+</body>
+</html>
 
 
-<section class="contact-hero">
-  <h1>Contact Us</h1>
-  <p>
-    Have questions? We'd love to hear from you. Please use the form below to get in touch with us.
-  </p>
-</section>
+
+<!----CSS---->
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f6f7fb;
+  color: #111;
+  line-height: 1.5;
+}
 
 
-<section class="contact-info">
-
-  <div class="contact-box">
-    <h2>Map / Location</h2>
-
-
-    <div class="map-box">
-      Map / Location
-    </div>
-
-    <p>
-      Address line 1<br />
-      City, Postcode
-    </p>
-  </div>
+.contact-hero,
+.contact-info,
+.contact-form-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
 
 
-  <div class="contact-box">
-    <h2>Contact Details</h2>
+.contact-hero {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 24px;
+}
 
-    <p><strong>Email:</strong> </p>
-    <p><strong>Phone:</strong> </p>
+.contact-hero h1 {
+  margin: 0 0 14px;
+  font-size: clamp(30px, 3vw, 44px);
+  letter-spacing: -0.5px;
+}
+
+.contact-hero p {
+  margin: 0 auto;
+  max-width: 720px;
+  font-size: 16px;
+  opacity: 0.85;
+}
 
 
-    <p class="note">
-      Messages submitted on this page are for demonstration purposes only.
-    </p>
-  </div>
-</section>
+.contact-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding-top: 10px;
+}
 
 
-<section class="contact-form-section">
-  <h2>Send Us a Message</h2>
+.contact-box,
+.contact-form {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
 
-  <form class="contact-form">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required />
+.contact-box h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  letter-spacing: -0.3px;
+}
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required />
+.contact-box {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-    <label for="subject">Subject</label>
-    <input type="text" id="subject" name="subject" required />
+.contact-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.08);
+}
 
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="6" required></textarea>
+.contact-form button {
+  letter-spacing: 0.3px;
+}
 
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+
+.map-box {
+  height: 260px;
+  border-radius: 14px;
+  border: 1px dashed rgba(0, 0, 0, 0.25);
+  background: #f2f4f8;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* If using embedded Google Map */
+.map-embed {
+  width: 100%;
+  height: 260px;
+  border: 0;
+  border-radius: 14px;
+}
+
+
+.note {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+
+.contact-form-section {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.contact-form-section h2 {
+  margin: 0 0 20px;
+  font-size: 28px;
+  letter-spacing: -0.3px;
+}
+
+
+.contact-form {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: left;
+
+  display: grid;
+  gap: 14px;
+}
+
+.contact-form label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form-section h2 {
+  font-weight: 700;
+}
+
+
+.contact-form button {
+  margin-top: 10px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: none;
+  background: #111;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.08s ease, filter 0.2s ease;
+}
+
+.contact-form button:hover {
+  filter: brightness(1.08);
+}
+
+.contact-form button:active {
+  transform: translateY(1px);
+}
+
+
+@media (max-width: 800px) {
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+
+  .map-box,
+  .map-embed {
+    height: 320px;
+  }
+}
