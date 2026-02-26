@@ -366,6 +366,7 @@ CSS
   margin-top: 14px;
   display: grid;
   gap: 12px;
+  max-width: fit-content;
 }
 
 .practice-list{
