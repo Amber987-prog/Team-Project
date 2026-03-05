@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+ 
+  <body>
+    <header style="background-color: #357475; height: 50px"></header>
+ 
+    <nav class="navbar">
+      <ul class="menu">
+        <li><a href="Index.html">Home</a></li>
+ 
+        <li class="item">
+          <a href="Lessons.html">Lessons</a>
+          <ul class="dropdown">
+            <li>
+              <a href="KS3.html">KS3</a>
+              <ul class="dropdown">
+                <li><a href="Addition.html">Addition</a></li>
+                <li><a href="Lesson 1 - Subtraction.html">Subtraction</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="GCSE page.html">GCSE</a>
+              <ul class="dropdown">
+                <li>
+                  <a href="Lessions page 3 - Multiplication.html">Multiplication</a
+                  >
+                </li>
+                <li><a href="Division.html">Division</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+ 
+        <li><a href="Quizzes.html">Quizzes</a></li>
+        <li><a href="AboutUs.html">About us</a></li>
+        <li><a href="ContactUs.html">Contact us</a></li>
+      </ul>
+    </nav>
+ 
+    <main class="page">
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Learn. Play. Succeed.</h1>
+          <p>
+            An interactive maths learning platform designed to build confidence.
+          </p>
+          <a class="btn primary" href="Lessons.html">Get Started →</a>
+        </div>
+ 
+        <div class="hero-carousel card">Image Carousel</div>
+      </section>
+ 
+      <section class="explore-lessons">
+        <h2>Explore Lessons</h2>
+ 
+        <div class="lesson-levels">
+          <button class="level-btn" data-target="ks3">KS3</button>
+          <button class="level-btn" data-target="gcse">GCSE</button>
+        </div>
+ 
+        <div class="lesson-dropdown" id="ks3">
+          <div class="lesson-card card">KS3 - Addition</div>
+          <div class="lesson-card card">KS3 - Subtraction</div>
+        </div>
+ 
+        <div class="lesson-dropdown" id="gcse">
+          <div class="lesson-card card">GCSE - Multiplication</div>
+          <div class="lesson-card card">GCSE - Division</div>
+        </div>
+      </section>
+ 
+      <section class="games-section">
+        <div class="games-left">
+          <h2>Fun Games and Quizzes</h2>
+ 
+          <div class="game-item">
+            <div class="game-card card"></div>
+            <a class="btn secondary" href="Quizzes.html">Quiz & Play →</a>
+          </div>
+ 
+          <div class="game-item">
+            <div class="game-card card"></div>
+            <a class="btn secondary" href="Quizzes.html">Quiz & Play →</a>
+          </div>
+        </div>
+ 
+        <div class="reviews-right">
+          <h2>What Our Students Say!</h2>
+          <p class="card">
+            “This website helped me improve my maths grade!”<br /><br />
+            ★★★★★<br />
+            <strong>Year 8 Student</strong>
+          </p>
+        </div>
+      </section>
+    </main>
+ 
+    <footer>
+    <div class="medium-logo">
+        <a href="index.html"><img src="Team project backup logo.jpg" width= 125px height=100px alt="Main website logo at bottom of page. Clickable to bring back to homepage."></a>
+    </div>
+    <div class="contact-details">
+        <p1 style="font-weight: 800; font-size: large;">Contact Details:</p1>
+        <br>
+        <a href="link"></i> Contact Us Page</a>
+        <br>
+        Email
+        <br>
+        Phone Number
+    </div>
+    <div class="developer-details">
+        <p3 style="font-weight: 800; font-size: large;">Developer Details</p3>
+        <br>
+        <a href="AboutUs.html">Developer Details Page</a>
+    </div>
+    <div class="quizzes">
+        <p4 style="font-weight: 800; font-size: large;">Quizzes</p4>
+        <br>
+        <a href="Quizzes.html">All quizzes Page??</a>
+        <br>
+    </div>
+    <div class="learning-tools">
+        <p4 style="font-weight: 800; font-size: large;">Learning Tools</p4>
+        <br>
+        <a href="KS3.html">KS3</a>
+        <br>
+        <a href="GCSE.html">GCSE</a>
+        <br>
+    </div>
+</footer>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+      }
+ 
+      body {
+        background: #f6f7fb;
+        line-height: 1.6;
+      }
+ 
+      .navbar {
+        background: #4ea5a7;
+        padding: 20px 30px;
+        text-align: center;
+      }
+ 
+      .menu {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+      }
+ 
+      .item {
+        position: relative;
+      }
+ 
+      .menu a {
+        text-decoration: none;
+        color: #ffffff;
+        padding: 8px 14px;
+        border-radius: 20px;
+        display: inline-block;
+      }
+ 
+      .menu a:hover {
+        background: #357475;
+      }
+ 
+      .dropdown {
+        display: none;
+        position: absolute;
+        background: #4ea5a7;
+        list-style: none;
+        padding: 8px;
+        border-radius: 12px;
+        min-width: 120px;
+      }
+ 
+      .item:hover > .dropdown,
+      .dropdown li:hover > .dropdown {
+        display: block;
+      }
+ 
+      .dropdown li {
+        position: relative;
+      }
+      .dropdown .dropdown {
+        top: 0px;
+        left: 100%;
+      }
+ 
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+      }
+ 
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        margin-bottom: 5rem;
+      }
+ 
+      .hero-text h1 {
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+      }
+ 
+      .hero-text p {
+        max-width: 420px;
+        margin-bottom: 1.5rem;
+        font-weight: normal;
+        color: #333;
+      }
+ 
+      .hero-carousel {
+        height: 260px;
+        display: grid;
+        place-items: center;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+      }
+ 
+      .btn {
+        display: inline-block;
+        padding: 10px 18px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 14px;
+        cursor: pointer;
+      }
+ 
+      .btn.primary {
+        background: #357475;
+        color: #ffffff;
+        border: none;
+      }
+ 
+      .btn.secondary {
+        border: 2px solid #357475;
+        color: #357475;
+        background: transparent;
+      }
+ 
+      .btn.secondary:hover {
+        background: #357475;
+        color: #ffffff;
+      }
+ 
+      .explore-lessons {
+        text-align: center;
+        margin-bottom: 5rem;
+      }
+ 
+      .explore-lessons h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
+ 
+      .lesson-levels {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+ 
+      .level-btn {
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: 2px solid #357475;
+        background: transparent;
+        color: #357475;
+        cursor: pointer;
+      }
+ 
+      .level-btn:hover,
+      .level-btn.active {
+        background: #357475;
+        color: #ffffff;
+      }
+ 
+      .lesson-dropdown {
+        display: none;
+        grid-template-columns: repeat(2, 160px);
+        justify-content: center;
+        gap: 1.5rem;
+      }
+ 
+      .lesson-dropdown.show {
+        display: grid;
+      }
+ 
+      .lesson-card {
+        padding: 16px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        font-size: 14px;
+      }
+ 
+      .games-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+ 
+      .games-left {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+ 
+      .game-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+ 
+      .game-card {
+        width: 100%;
+        height: 120px;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+      }
+ 
+      .games-left .btn {
+        margin: 0;
+      }
+ 
+      .reviews-right p {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        padding: 22px;
+        font-weight: normal;
+      }
+ 
+      footer {
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        background-color: #3f898a;
+        color: white;
+        align-content: center;
+        padding: 20px;
+        border-top: 1px solid;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+ 
+      footer a {
+        color: white;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".level-btn");
+        const dropdowns = document.querySelectorAll(".lesson-dropdown");
+ 
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const target = button.dataset.target;
+ 
+            dropdowns.forEach((d) => d.classList.remove("show"));
+            buttons.forEach((b) => b.classList.remove("active"));
+ 
+            document.getElementById(target).classList.add("show");
+            button.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+ 
+ 

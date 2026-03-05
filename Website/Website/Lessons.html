@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lessons</title>
+ 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 20px;
+      box-sizing: border-box;
+    }
+ 
+    body {
+      background: #f6f7fb;
+    }
+ 
+    .navbar {
+      background: #4ea5a7;
+      padding: 20px 30px;
+      text-align: center;
+    }
+ 
+    .menu {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+ 
+    .item {
+      position: relative;
+    }
+ 
+    .menu a {
+      text-decoration: none;
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+ 
+    .menu a:hover {
+      background: #357475;
+    }
+ 
+    .dropdown {
+      display: none;          
+      position: absolute;
+      background: #4ea5a7;
+      list-style: none;
+      padding: 8px;
+      border-radius: 12px;
+      min-width: 140px;
+    }
+ 
+    .item:hover > .dropdown,
+    .dropdown li:hover > .dropdown {
+      display: block;
+    }
+ 
+    .dropdown li {
+      position: relative;
+    }
+    .dropdown .dropdown {
+      top: 0px;;
+      left: 100%;
+    }
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+ 
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+ 
+    .intro-text {
+      max-width: 650px;
+      margin: 0 auto 4rem;
+      text-align: center;
+      font-weight: normal;
+    }
+ 
+    .lesson-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 5rem;
+    }
+ 
+    .lesson-level {
+      background: #4ea5a7;
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 3rem;
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.1);
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+ 
+    .lesson-level:hover {
+      background: #357475;
+    }
+ 
+    .lesson-level h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+ 
+    .lesson-level p {
+      font-weight: normal;
+      font-size: 16px;
+    }
+ 
+    .bottom-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+ 
+    .info-card,
+    .review-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+ 
+    .info-card p,
+    .review-card p {
+      font-weight: normal;
+    }
+    .quiz-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      text-decoration: none;
+      color: #357475;
+      font-size: 16px;
+    }
+ 
+    .quiz-link:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .lesson-grid,
+      .bottom-section {
+        grid-template-columns: 1fr;
+      }
+    }
+    footer {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    background-color: #3f898a;
+    color: white;
+    align-content: center;
+    font-family: "DM Sans", serif;
+    padding: 20px;
+    border-width: 1px;
+    border-top-style: solid;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    footer a{
+    color: white;
+    }
+  </style>
+</head>
+ 
+<body>
+ 
+  <nav class="navbar">
+  <ul class="menu">
+    <a href="Index.html">Home</a>
+    <li class="item">
+      <a href="Lessons.html">Lessons</a>
+      <ul class="dropdown">
+        <li>
+          <a href="KS3.html">KS3</a>
+          <ul class="dropdown">
+            <li><a href="Addition.html">Addition</a></li>
+            <li><a href="Lesson 1 - Subtraction.html">Subtraction</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="GCSE page.html">GCSE</a>
+          <ul class="dropdown">
+            <li><a href="Lessions page 3 - Multiplication.html">Multiplication</a></li>
+            <li><a href="Division.html">Division</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+ 
+    <li class="item"><a href="Quizzes.html">Quizzes</a></li>
+    <li class="item"><a href="AboutUs.html">About us</a></li>
+    <li class="item"><a href="ContactUs.html">Contact us</a></li>
+  </ul>
+</nav>
+ 
+  <main class="page">
+ 
+    <h1>Lessons</h1>
+ 
+    <p class="intro-text">
+      Our lessons help students develop confidence in maths.
+      KS3 lessons focus on building strong foundations, while
+      GCSE lessons introduce more advanced concepts.
+    </p>
+    <section class="lesson-grid">
+  <a href="" class="lesson-level">
+    <h2>KS3</h2>
+    <p>LEARNERS AGED<br>11-13</p>
+  </a>
+ 
+  <a href="GCSE page.html" class="lesson-level">
+    <h2>GCSE</h2>
+    <p>LEARNERS AGED<br>14-16</p>
+  </a>
+</section>
+ 
+    <section class="bottom-section">
+      <div class="info-card">
+        <p>
+          Check out our quizzes to test your understanding and
+          earn Bronze, Silver or Gold.
+        </p>
+ 
+        <a class="quiz-link" href="">
+          <strong>Quizzes &amp; Play →</strong>
+        </a>
+      </div>
+ 
+      <div class="review-card">
+        <p>
+          “The lessons made maths much easier to understand!”<br>
+          ★★★★★<br>
+          <strong>Year 9 Student</strong>
+        </p>
+      </div>
+    </section>
+ 
+  </main>
+ 
+  <footer>
+    <div class="medium-logo">
+        <a href="Index.html"><img src="Team project backup logo.jpg" width= 125px height=100px alt="Main website logo at bottom of page. Clickable to bring back to homepage."></a>
+    </div>
+    <div class="contact-details">
+        <p1 style="font-weight: 800; font-size: large;">Contact Details:</p1>
+        <br>
+        <a href="ContactUs.html"></i> Contact Us Page</a>
+        <br>
+        Email
+        <br>
+        Phone Number
+    </div>
+    <div class="developer-details">
+        <p3 style="font-weight: 800; font-size: large;">Developer Details</p3>
+        <br>
+        <a href="AboutUs.html"></i>Developer Details Page</a>
+    </div>
+    <div class="quizzes">
+        <p4 style="font-weight: 800; font-size: large;">Quizzes</p4>
+        <br>
+        <a href="Quizzes.html"></i> All quizzes Page??</a>
+        <br>
+    </div>
+    <div class="learning-tools">
+        <p4 style="font-weight: 800; font-size: large;">Learning Tools</p4>
+        <br>
+        <a href="KS3.html"></i> KS3</a>
+        <br>
+        <a href="GCSE page.html"></i> GCSE</a>
+        <br>
+    </div>
+</footer>
+ 
+</body>
+</html>
+ 
