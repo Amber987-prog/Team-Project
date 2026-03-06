@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .game-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: 600px;
+            background: #57c0c2;
+            border: 8px solid #357475;
+            border-radius: 20px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Game Stats */
+        .game-stats {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2C3E50;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stat-value {
+            color: #667eea;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .heart {
+            color: #FF6B9D;
+        }
+
+        .star {
+            color: #FFD700;
+        }
+
+        /* Canvas */
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+
+        /* Input Area */
+        .input-area {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 500px;
+            display: flex;
+            gap: 10px;
+            z-index: 200;
+        }
+
+        .problem-display {
+            flex: 1;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.95);
+            border: 3px solid #667eea;
+            border-radius: 10px;
+            color: #2C3E50;
+            text-align: center;
+            min-height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .answer-input {
+            width: 120px;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border: 3px solid #FF6B9D;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #2C3E50;
+            text-align: center;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 10px rgba(118, 75, 162, 0.5);
+        }
+
+        /* Game Over Screen */
+        .game-over {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 500;
+            text-align: center;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .game-over.show {
+            display: flex;
+        }
+
+        .game-over h1 {
+            font-size: 72px;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0 #667eea;
+        }
+
+        .game-over p {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .restart-btn {
+            padding: 15px 40px;
+            font-size: 24px;
+            background: #FF6B9D;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .restart-btn:hover {
+            transform: scale(1.1);
+            background: #FF3D7F;
+        }
+
+        .restart-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Start Screen */
+        .start-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #57c0c2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 400;
+            text-align: center;
+            color: white;
+        }
+
+        .start-screen.hidden {
+            display: none;
+        }
+
+        .start-screen h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+            animation: bounce 2s infinite;
+        }
+
+        .start-screen p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .start-btn {
+            padding: 15px 50px;
+            font-size: 28px;
+            background: #FF6B9D;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+            margin-bottom: 20px;
+        }
+
+        .start-btn:hover {
+            transform: scale(1.1);
+            background: #FF3D7F;
+        }
+
+        .start-btn:active {
+            transform: scale(0.95);
+        }
+
+        .difficulty-select {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .difficulty-btn {
+            padding: 10px 25px;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .difficulty-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+
+        .difficulty-btn.selected {
+            background: #FF6B9D;
+            border-color: #FF6B9D;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .instructions {
+            font-size: 14px;
+            margin-top: 30px;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="start-screen" id="startScreen">
+            <h1>Math Game</h1>
+            <p>Solve math problems to defeat your enemies!</p>
+            
+            <div>
+                <button class="start-btn" id="startBtn">START GAME</button>
+            </div>
+
+            <div>
+                <p style="font-size: 16px; margin-bottom: 10px;">Select Difficulty:</p>
+                <div class="difficulty-select">
+                    <button class="difficulty-btn selected" data-difficulty="easy">Easy</button>
+                    <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+                    <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <p><strong>How to Play:</strong></p>
+                <p>Read the math problem that appears on enemies</p>
+                <p>Type your answer in the input box</p>
+                <p>Press Enter to cast a spell and damage the enemy</p>
+                <p>You have 3 lives - try to survive as long as possible!</p>
+            </div>
+        </div>
+
+        <div class="game-stats" id="gameStats">
+            <div class="stat">
+                <span class="heart">❤️</span>
+                <span>Lives:</span>
+                <span class="stat-value" id="livesDisplay">3</span>
+            </div>
+            <div class="stat">
+                <span class="star">⭐</span>
+                <span>Score:</span>
+                <span class="stat-value" id="scoreDisplay">0</span>
+            </div>
+            <div class="stat">
+                <span>Level:</span>
+                <span class="stat-value" id="levelDisplay">1</span>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <div class="input-area" id="inputArea">
+            <div class="problem-display" id="problemDisplay">Solve the problem!</div>
+            <input 
+                type="text" 
+                class="answer-input" 
+                id="answerInput" 
+                placeholder="Answer" 
+                disabled
+            >
+        </div>
+
+        <div class="game-over" id="gameOver">
+            <h1>GAME OVER</h1>
+            <p id="finalScore">Final Score: 0</p>
+            <button class="restart-btn" id="restartBtn">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const problemDisplay = document.getElementById('problemDisplay');
+        const answerInput = document.getElementById('answerInput');
+        const livesDisplay = document.getElementById('livesDisplay');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+        const levelDisplay = document.getElementById('levelDisplay');
+        const gameOverScreen = document.getElementById('gameOver');
+        const finalScoreDisplay = document.getElementById('finalScore');
+        const startScreen = document.getElementById('startScreen');
+        const startBtn = document.getElementById('startBtn');
+        const restartBtn = document.getElementById('restartBtn');
+        const difficultyBtns = document.querySelectorAll('.difficulty-btn');
+
+        // Set canvas size
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = canvas.parentElement.clientHeight;
+
+        // Game variables
+        let gameActive = false;
+        let gameRunning = false;
+        let score = 0;
+        let lives = 3;
+        let level = 1;
+        let difficulty = 'easy';
+        let spawnRate = 200;
+        let spawnCounter = 0;
+        let correctAnswer = null;
+        let currentProblem = '';
+
+        // Game objects
+        const player = {
+            x: canvas.width / 2,
+            y: canvas.height - 80,
+            width: 50,
+            height: 50,
+            draw: function() {
+                ctx.font = '40px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('😊', this.x, this.y);
+            }
+        };
+
+        const enemies = [];
+        const spells = [];
+
+        // Enemy class
+        class Enemy {
+            constructor() {
+                this.x = Math.random() * (canvas.width - 60) + 30;
+                this.y = -50;
+                this.width = 60;
+                this.height = 60;
+                this.speed = 0.2 + (difficulty === 'easy' ? 0 : difficulty === 'medium' ? 0.5 : 1);
+                
+                // Generate random math problem
+                const problemTypes = ['addition', 'subtraction', 'multiplication', 'division'];
+                const types = difficulty === 'easy' ? ['addition', 'subtraction'] : 
+                             difficulty === 'medium' ? ['addition', 'subtraction', 'multiplication'] : 
+                             problemTypes;
+                
+                const type = types[Math.floor(Math.random() * types.length)];
+                const max = difficulty === 'easy' ? 10 : difficulty === 'medium' ? 20 : 50;
+                
+                const a = Math.ceil(Math.random() * max);
+                const b = Math.ceil(Math.random() * Math.max(max / 2, 1));
+                
+                let problem, answer;
+                
+                if (type === 'addition') {
+                    problem = `${a} + ${b}`;
+                    answer = a + b;
+                } else if (type === 'subtraction') {
+                    problem = `${Math.max(a, b)} - ${Math.min(a, b)}`;
+                    answer = Math.max(a, b) - Math.min(a, b);
+                } else if (type === 'multiplication') {
+                    problem = `${a} × ${b}`;
+                    answer = a * b;
+                } else {
+                    problem = `${a * b} ÷ ${a}`;
+                    answer = b;
+                }
+                
+                this.problem = problem;
+                this.answer = answer;
+                this.health = 1;
+            }
+
+            update() {
+                this.y += this.speed;
+            }
+
+            draw() {
+                // Enemy body (demon/enemy face)
+                ctx.font = 'bold 40px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('👿', this.x, this.y);
+                
+                // Problem text
+                ctx.font = 'bold 12px Arial';
+                ctx.fillStyle = '#FF0000';
+                ctx.fillText(this.problem, this.x, this.y + 25);
+                
+                // Health bar
+                ctx.fillStyle = '#FF6B9D';
+                ctx.fillRect(this.x - 25, this.y + 30, 50 * this.health, 5);
+                ctx.strokeStyle = '#333';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(this.x - 25, this.y + 30, 50, 5);
+            }
+
+            isOffScreen() {
+                return this.y > canvas.height;
+            }
+        }
+
+        // Spell class
+        class Spell {
+            constructor(fromX, fromY) {
+                this.x = fromX;
+                this.y = fromY;
+                this.width = 15;
+                this.height = 15;
+                this.speed = 8;
+                this.color = '#FFD700';
+            }
+
+            update() {
+                this.y -= this.speed;
+            }
+
+            draw() {
+                ctx.fillStyle = '#FFD700';
+                ctx.shadowColor = '#FFFF00';
+                ctx.shadowBlur = 15;
+                ctx.fillRect(this.x - 7, this.y - 7, 15, 15);
+                ctx.shadowBlur = 0;
+            }
+
+            isOffScreen() {
+                return this.y < 0;
+            }
+        }
+
+        // Difficulty selection
+        difficultyBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                difficultyBtns.forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                difficulty = btn.dataset.difficulty;
+            });
+        });
+
+        // Start game
+        startBtn.addEventListener('click', () => {
+            startScreen.classList.add('hidden');
+            gameActive = true;
+            gameRunning = true;
+            answerInput.disabled = false;
+            answerInput.focus();
+            
+            if (enemies.length === 0) {
+                spawnEnemy();
+            }
+            
+            gameLoop();
+        });
+
+        // Restart game
+        restartBtn.addEventListener('click', () => {
+            score = 0;
+            lives = 3;
+            level = 1;
+            spawnRate = 200;
+            enemies.length = 0;
+            spells.length = 0;
+            gameOverScreen.classList.remove('show');
+            startScreen.classList.remove('hidden');
+            gameActive = false;
+            gameRunning = false;
+            answerInput.disabled = true;
+            answerInput.value = '';
+        });
+
+        // Input handler
+        answerInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && gameRunning && enemies.length > 0) {
+                const userAnswer = parseInt(answerInput.value);
+                
+                if (userAnswer === enemies[0].answer) {
+                    // Correct answer - cast spell
+                    spells.push(new Spell(player.x, player.y));
+                    enemies[0].health -= 1;
+                    
+                    if (enemies[0].health <= 0) {
+                        enemies.shift();
+                        score += 10 * level;
+                        
+                        // Level up
+                        if (score % 100 === 0) {
+                            level++;
+                            spawnRate = Math.max(100, 200 - level * 10);
+                        }
+                    }
+                } else {
+                    // Wrong answer - lose a life
+                    lives--;
+                    if (lives <= 0) {
+                        endGame();
+                    }
+                }
+                
+                answerInput.value = '';
+                
+                if (enemies.length > 0) {
+                    problemDisplay.textContent = enemies[0].problem;
+                }
+            }
+        });
+
+        function spawnEnemy() {
+            enemies.push(new Enemy());
+            if (enemies.length === 1) {
+                problemDisplay.textContent = enemies[0].problem;
+            }
+        }
+
+        function endGame() {
+            gameRunning = false;
+            gameOverScreen.classList.add('show');
+            finalScoreDisplay.textContent = `Final Score: ${score}`;
+            answerInput.disabled = true;
+        }
+
+        function gameLoop() {
+            if (!gameRunning) {
+                return;
+            }
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Spawn enemies
+            spawnCounter++;
+            if (spawnCounter > spawnRate && enemies.length < 3 + level) {
+                spawnEnemy();
+                spawnCounter = 0;
+            }
+
+            // Update and draw enemies
+            for (let i = enemies.length - 1; i >= 0; i--) {
+                enemies[i].update();
+                enemies[i].draw();
+
+                // Check if enemy reached bottom
+                if (enemies[i].isOffScreen()) {
+                    enemies.splice(i, 1);
+                    lives--;
+                    
+                    if (lives <= 0) {
+                        endGame();
+                        return;
+                    }
+                    
+                    if (enemies.length > 0) {
+                        problemDisplay.textContent = enemies[0].problem;
+                    } else {
+                        problemDisplay.textContent = 'Next enemy coming...';
+                    }
+                }
+            }
+
+            // Update and draw spells
+            for (let i = spells.length - 1; i >= 0; i--) {
+                spells[i].update();
+                spells[i].draw();
+
+                if (spells[i].isOffScreen()) {
+                    spells.splice(i, 1);
+                }
+            }
+
+            // Draw player
+            player.draw();
+
+            // Draw particles/effects
+            drawParticles();
+
+            // Update UI
+            livesDisplay.textContent = lives;
+            scoreDisplay.textContent = score;
+            levelDisplay.textContent = level;
+
+            requestAnimationFrame(gameLoop);
+        }
+
+        function drawParticles() {
+            // Just adding visual flair with some stars around the player
+            const time = Date.now();
+            const stars = ['✨', '⭐', '✨'];
+            
+            for (let i = 0; i < 3; i++) {
+                const angle = (time / 500 + i * Math.PI * 2 / 3) % (Math.PI * 2);
+                const x = player.x + Math.cos(angle) * 40;
+                const y = player.y + Math.sin(angle) * 40;
+                ctx.font = '16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(stars[i], x, y);
+            }
+        }
+
+        // Auto-focus input when clicking the game area
+        canvas.addEventListener('click', () => {
+            if (gameRunning) {
+                answerInput.focus();
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            // Optional: handle resize
+        });
+    </script>
+</body>
+</html>
