@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subtraction</title>
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
+</head>
+<header class="top-bar"></header>
+
+<body>
+ <nav class="navbar">
+  <ul class="menu">
+    <a href="Index.html">Home</a>
+    <li class="item">
+      <a href="Lessons.html">Lessons</a>
+      <ul class="dropdown">
+        <li>
+          <a href="KS3.html">KS3</a>
+          <ul class="dropdown">
+            <li><a href="Addition.html">Addition</a></li>
+            <li><a href="Lesson 1 - Subtraction.html">Subtraction</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="GCSE page.html">GCSE</a>
+          <ul class="dropdown">
+            <li><a href="Lessions page 3 - Multiplication.html">Multiplication</a></li>
+            <li><a href="Division.html">Division</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+ 
+    <li class="item"><a href="Quizzes.html">Quizzes</a></li>
+    <li class="item"><a href="AboutUs.html">About us</a></li>
+    <li class="item"><a href="ContactUs.html">Contact us</a></li>
+  </ul>
+</nav>
+<main class="lesson-page" data-lesson="subtraction">
+ 
+  <section class="lesson-hero">
+    <h1><strong>Lesson 2</strong></h1>
+    <h2>Subtraction</h2>
+    <p class="lesson-intro">
+      Learn the theory on how to subtract numbers. Then test you knowledge by taking the quiz to earn Bronze, Silver or Gold.
+    </p>
+  </section>
+ 
+  <section class="lesson-grid">
+ 
+    <article class="lesson-content">
+ 
+      <div class="lesson-image">
+        <img src="pexels-pixabay-53621.jpg" alt="Calculator next to maths exam paper and pen." style="width: flex; height: 14rem;">
+      </div>
+ 
+      <div class="lesson-card">
+        <h3>What is Subtraction?</h3>
+        <p>
+          Subtraction is the process or skill of taking one number or amount away from another.
+        </p>
+ 
+        <h3>Key Terminology</h3>
+        <ul>
+          <li><strong>Difference</strong> - The result of the subtraction operation (minuend - subtrahend = difference).</li>
+          <li><strong>Minuend</strong> - The initial number or the total amount from which a value is subtracted.</li>
+          <li><strong>Subtrahend</strong> - The amount being taken away or subtracted from the minuend.</li>
+          <li><strong>Column Subtraction</strong> - A vertical method for calculating, arranging numbers by place value.</li>
+        </ul>
+ 
+        <h3>Worked Examples</h3>
+        <p><strong>Example 1:</strong> - 9 = 5</p>
+        <p><strong>Example 2:</strong> 56 - 17 = 39</p>
+        <p><strong>Example 3:</strong>457 - 163 = 294</p>
+      </div>
+ 
+      <div class="lesson-card2">
+        <h3>You give it a go!</h3>
+ 
+        <form class="practice-form" id="practiceForm">
+          <ol class="practice-list">
+            <li>
+              <label>13 - 6 =</label>
+              <input id="q1" name="q1" type="text" inputmode="numeric" placeholder="Answer">
+            </li>
+            <li>
+              <label>68 - 32 =</label>
+              <input id="q2" name="q2" type="text" inputmode="numeric" placeholder="Answer">
+            </li>
+            <li>
+              <label>693 - 578 =</label>
+              <input id="q3" name="q3" type="text" inputmode="numeric" placeholder="Answer">
+            </li>
+          </ol>
+ 
+          <div class="practice-actions">
+              <button class="btn secondary" type="submit">Check Answers</button>
+              <button class="btn secondary" type="button" id="practiceReset">Reset</button>
+            </div>
+ 
+            <p class="practice-feedback" id="practiceFeedback" aria-live="polite"></p>
+        </form>
+      </div>
+ 
+    </article>
+ 
+    <aside class="lesson-side">
+ 
+      <div class="side-card">
+        <h2>Multiplication Quiz!</h2>
+ 
+        <div class="quiz-embed">
+          <iframe
+            src="https://view.genially.com/698f2dbf72ae68eb82735093/interactive-content-math-quiz"
+            title="Subtraction Quiz"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+      <div class="side-card">
+        <h2>What Our Students Say!</h2>
+ 
+        <p>
+          “Subtraction is so simple now!”
+        </p>
+ 
+        <p>★★★★★</p>
+        <strong>Year 8 Student</strong>
+      </div>
+    </aside>
+ 
+  </section>
+ 
+  <section class="results-grid">
+ 
+    <div class="results-card" id="resultsCard">
+        <h2>Your Score!</h2>
+        <p class="big-score" id="scoreDisplay">You scored <strong>0/3</strong></p>
+    </div>
+  </section>
+ 
+  <section class="lesson-nav">
+    <a class="btn secondary" href="">← Back to KS3</a>
+    <a class="btn secondary" href="quiz-play.html">Quiz &amp; Play →</a>
+  </section>
+
+ 
+</main>
+ 
+</body>
+<footer>
+    <div class="medium-logo">
+        <a href="Index.html"><img src="NavbarFooterLogo.jpg" width= 150px height=150px alt="Main website logo at bottom of page. Clickable to bring back to homepage."></a>
+    </div>
+    <div class="contact-details">
+        <p1 style="font-weight: 800; font-size: large;">Contact Details:</p1>
+        <br>
+        <a href="ContactUs.html"></i> Contact Us Page</a>
+        <br>
+        Email
+        <br>
+        Phone Number
+    </div>
+    <div class="developer-details">
+        <p3 style="font-weight: 800; font-size: large;">Developer Details</p3>
+        <br>
+        <a href="AboutUs.html"></i>Developer Details Page</a>
+    </div>
+    <div class="quizzes">
+        <p4 style="font-weight: 800; font-size: large;">Quizzes</p4>
+        <br>
+        <a href="Quizzes.html"></i> All quizzes Page??</a>
+        <br>
+    </div>
+    <div class="learning-tools">
+        <p4 style="font-weight: 800; font-size: large;">Learning Tools</p4>
+        <br>
+        <a href="KS3.html"></i> KS3</a>
+        <br>
+        <a href="GCSE page.html"></i> GCSE</a>
+        <br>
+    </div>
+</footer>
+ 
+<script src="script.js"></script>
+</html>
+

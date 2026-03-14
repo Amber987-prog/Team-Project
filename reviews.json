@@ -1,0 +1,29 @@
+{
+  "reviews": [
+    {
+      "text": "This website made maths much easier to understand!",
+      "stars": "★★★★★",
+      "student": "Year 7 Student"
+    },
+    {
+      "text": "The quizzes helped me practise before my tests.",
+      "stars": "★★★★★",
+      "student": "Year 8 Student"
+    },
+    {
+      "text": "I improved my confidence in maths thanks to the lessons.",
+      "stars": "★★★★★",
+      "student": "Year 9 Student"
+    },
+    {
+      "text": "Great revision for GCSE topics and really easy to use.",
+      "stars": "★★★★★",
+      "student": "Year 10 Student"
+    },
+    {
+      "text": "Perfect for practising before exams. Highly recommend!",
+      "stars": "★★★★★",
+      "student": "Year 11 Student"
+    }
+  ]
+}

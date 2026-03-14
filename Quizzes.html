@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizzes | Maths Learning</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
+
+  <!-- Main site CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Multi-topic Quiz CSS -->
+  <link rel="stylesheet" href="multi-quiz.css">
+</head>
+
+<body>
+
+  <header class="top-bar"></header>
+
+  <nav class="navbar">
+    <ul class="menu">
+      <li class="item"><a href="index.html">Home</a></li>
+      <li class="item">
+        <a href="Lessons.html">Lessons</a>
+        <ul class="dropdown">
+          <li>
+            <a href="KS3.html">KS3</a>
+            <ul class="dropdown">
+              <li><a href="Addition.html">Addition</a></li>
+              <li><a href="Lesson 1 - Subtraction.html">Subtraction</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="GCSE page.html">GCSE</a>
+            <ul class="dropdown">
+              <li><a href="Lessions page 3 - Multiplication.html">Multiplication</a></li>
+              <li><a href="Division.html">Division</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="item"><a href="Quizzes.html" class="active">Quizzes</a></li>
+      <li class="item"><a href="AboutUs.html">About Us</a></li>
+      <li class="item"><a href="ContactUs.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <main class="quiz-page">
+    <section class="quiz-hero">
+      <h1><strong>Quizzes</strong></h1>
+      <p>Practise maths skills by completing the quizzes below. Each topic includes an interactive quiz and a link back to the matching lesson.</p>
+
+      <div class="quiz-quicklinks" aria-label="Quick links">
+        <a class="quiz-linkchip" href="KS3.html">KS3 Topics</a>
+        <a class="quiz-linkchip" href="GCSE page.html">GCSE Topics</a>
+        <a class="quiz-linkchip" href="Lessons.html">All Lessons</a>
+      </div>
+    </section>
+
+    <section class="quiz-grid" aria-label="Quiz topics">
+      <!-- Existing single-topic quizzes -->
+      <!-- Addition -->
+      <article class="quiz-card is-featured">
+        <h2>Addition</h2>
+        <p>Quick-fire questions to practise addition, including carrying.</p>
+        <div class="quiz-meta"><span>Level: KS3</span> <span>Time: 5-7 mins</span></div>
+        <div class="quiz-embed-large">
+          <iframe src="https://view.genially.com/698f2dbfbdc4721a09646ce9/interactive-content-math-quiz" title="Addition Quiz" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <a href="Addition.html" class="btn">Open Addition Lesson →</a>
+      </article>
+
+      <!-- Subtraction -->
+      <article class="quiz-card">
+        <h2>Subtraction</h2>
+        <p>Build confidence subtracting with and without exchanging.</p>
+        <div class="quiz-meta"><span>Level: KS3</span> <span>Time: 5-7 mins</span></div>
+        <div class="quiz-embed-large">
+          <iframe src="https://view.genially.com/698f2dbf72ae68eb82735093/interactive-content-math-quiz" title="Subtraction Quiz" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <a href="Lesson 1 - Subtraction.html" class="btn">Open Subtraction Lesson →</a>
+      </article>
+
+      <!-- Multiplication -->
+      <article class="quiz-card">
+        <h2>Multiplication</h2>
+        <p>Practise times tables and written multiplication methods.</p>
+        <div class="quiz-meta"><span>Level: GCSE</span> <span>Time: 6-8 mins</span></div>
+        <div class="quiz-embed-large">
+          <iframe src="https://view.genially.com/699399da1ec432eaecc63573" title="Multiplication Quiz" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <a href="Lessions page 3 - Multiplication.html" class="btn">Open Multiplication Lesson →</a>
+      </article>
+
+      <!-- Division -->
+      <article class="quiz-card">
+        <h2>Division</h2>
+        <p>Strengthen division skills, including remainders.</p>
+        <div class="quiz-meta"><span>Level: GCSE</span> <span>Time: 6-8 mins</span></div>
+        <div class="quiz-embed-large">
+          <iframe src="https://view.genially.com/69939b1ec7f1ffd742b864f8" title="Division Quiz" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <a href="Division.html" class="btn">Open Division Lesson →</a>
+      </article>
+    </section>
+
+    <section class="quiz-path" aria-label="Recommended quiz order">
+      <h2>Recommended Path</h2>
+      <div class="path-row">
+        <span class="path-step">Addition</span>
+        <span class="path-arrow">→</span>
+        <span class="path-step">Subtraction</span>
+        <span class="path-arrow">→</span>
+        <span class="path-step">Multiplication</span>
+        <span class="path-arrow">→</span>
+        <span class="path-step">Division</span>
+      </div>
+    </section>
+
+    <section class="quiz-info">
+      <h2>How the Quizzes Work</h2>
+      <ul>
+        <li>Select a quiz and complete the activity on this page.</li>
+        <li>Use the lesson buttons to revise the topic before or after the quiz.</li>
+        <li>Scores are shown within the quiz activity.</li>
+        <li>Quizzes can be repeated for extra practice.</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- Multi-Topic Quiz Embed -->
+    <div id="multiQuizEmbed"></div>
+
+    <section class="quiz-hero">
+      <h1>Games</h1>
+    </section>
+
+  </main>
+
+  <footer>
+    <!-- Footer content same as your previous code -->
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Multi-topic Quiz JS -->
+  <script src="script.js" defer></script>
+
+</body>
+</html>
