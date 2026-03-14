@@ -854,5 +854,12 @@ body {
 .btn:hover{
   background: #2b5f60;
 }
+
+hr{
+  border: none;
+  height: 2px;
+  background: #57c0c2;
+  margin: 40px 0;
+}
  
  
