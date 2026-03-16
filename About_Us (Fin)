@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="description" content="Index page for Math0ryx website">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">    
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+<body>
+<header style="background-color: #357475; height: 50px;">
+
+</header>
+<nav class="navbar">
+  <ul class="menu">
+    <li class="item">
+      <a href="">Lessons</a>
+      <ul class="dropdown">
+        <li>
+          <a href="">KS3</a>
+          <ul class="dropdown">
+            <li><a href="">Lesson 1</a></li>
+            <li><a href="">Lesson 2</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="">GCSE</a>
+          <ul class="dropdown">
+            <li><a href="">Lesson 1</a></li>
+            <li><a href="">Lesson 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li class="item"><a href="">Quizzes</a></li>
+    <li class="item"><a href="">About us</a></li>
+    <li class="item"><a href="">Contact us</a></li>
+  </ul>
+</nav>
+        
+
+        <!--Body-->
+        <main id="indexMain">
+            <!--Third section of Content-->
+            <section id="indexSec3Border" class="indexContentBorder">
+                <div id="indexSec3">
+                    <!--Title Area-->
+                    <div id="indexSec3TitleBorder" class="indexContentBorder">
+                        <div id="indexSec3Title">
+                            <h4>Meet Our Team</h4>
+                        </div>
+                    </div>
+                    <!--Sub title card-->
+                    <div id="indexSec3SubtitleBorder" class="indexContentBorder">
+                        <div id="indexSec3Subtitle">
+                            <p>
+                               
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            </p>
+                        </div>
+                    </div>
+                    <!--Main content cards-->
+                    <div id="indexSec3ContentCardsContainer">
+                        <div id="indexSec3Content1Border" class="indexContentBorder">
+                            <div id="indexSec3Content1Container">
+                                <div class="reviewface">
+                                    <img id="DefaultFace" src="Image_Assets/Default_Photo.jpg.png">
+                                </div>
+                                <p>
+                                    <strong>Meet Amber, </strong><br> Our Lead of Testing and Development. <br>
+xxxxx
+                                </p>
+                            </div>
+                        </div>
+                        <div id="indexSec3Content2Border" class="indexContentBorder">
+                            <div id="indexSec3Content2Container">
+                                <div class="reviewface">
+                                    <img id="DefaultFace" src="Image_Assets/Default_Photo.jpg.png">
+                                </div>
+                                <p>
+                                    <strong >Meet George, </strong> <br> Lead of Planning and Project Design. <br>
+xxxxx
+
+                                </p>
+                            </div>
+                        </div>
+                        <div id="indexSec3Content3Border" class="indexContentBorder">
+                            <div id="indexSec3Content3Container">
+                                <div class="reviewface">
+                                    <img id="DefaultFace" src="Image_Assets/Default_Photo.jpg.png">
+                                </div>
+                                <p>
+                                    <strong> Meet Maria,</strong> <br> Lead of Communications. <br>
+xxxxx
+                                </p>
+                            </div>
+                        </div>
+                        <div id="indexSec3Content4Border" class="indexContentBorder">
+                            <div id="indexSec3Content4Container">
+                                <div class="reviewface">
+                                    <img id="DefaultFace" src="Image_Assets/Default_Photo.jpg.png">
+                                </div>
+                                <p>
+                                   <strong>  Meet Edward,</strong> <br> xxx. <br>
+xxxxx
+                                </p>
+                            </div>
+                        </div>
+<footer>
+    <div class="medium-logo">
+        <a href="index.html"><img src="Team project backup logo.jpg" width= 125px height=100px alt="Main website logo at bottom of page. Clickable to bring back to homepage."></a>
+    </div>
+    <div class="contact-details">
+        <p1 style="font-weight: 800; font-size: large;">Contact Details:</p1>
+        <br>
+        <a href="link"></i> Contact Us Page</a>
+        <br>
+        Email
+        <br>
+        Phone Number
+    </div>
+    <div class="developer-details">
+        <p3 style="font-weight: 800; font-size: large;">Developer Details</p3>
+        <br>
+        <a href="link"></i>Developer Details Page</a>
+    </div>
+    <div class="quizzes">
+        <p4 style="font-weight: 800; font-size: large;">Quizzes</p4>
+        <br>
+        <a href="link"></i> All quizzes Page??</a>
+        <br>
+    </div>
+    <div class="learning-tools">
+        <p4 style="font-weight: 800; font-size: large;">Learning Tools</p4>
+        <br>
+        <a href="link"></i> KS3</a>
+        <br>
+        <a href="link"></i> GCSE</a>
+        <br>
+    </div>
+</footer>
+</html>
+
