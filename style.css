@@ -1255,7 +1255,8 @@ body {
 }
  
 .btn:hover{
-  background: #2b5f60;
+  background: #214949;
+  color: white;
 }
  footer {
     display: grid;
