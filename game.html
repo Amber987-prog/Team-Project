@@ -1,286 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Game</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Game</title>
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-        }
-
-        .game-container {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-            height: 600px;
-            background: #57c0c2;
-            border: 8px solid #357475;
-            border-radius: 20px;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            font-family: 'Arial', sans-serif;
-        }
-
-        /* Game Stats */
-        .game-stats {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            right: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            font-size: 18px;
-            font-weight: bold;
-            color: #2C3E50;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
-
-        .stat {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .stat-value {
-            color: #667eea;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .heart {
-            color: #FF6B9D;
-        }
-
-        .star {
-            color: #FFD700;
-        }
-
-        /* Canvas */
-        canvas {
-            display: block;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-        }
-
-        /* Input Area */
-        .input-area {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 500px;
-            display: flex;
-            gap: 10px;
-            z-index: 200;
-        }
-
-        .problem-display {
-            flex: 1;
-            padding: 12px;
-            font-size: 18px;
-            font-weight: bold;
-            background: rgba(255, 255, 255, 0.95);
-            border: 3px solid #667eea;
-            border-radius: 10px;
-            color: #2C3E50;
-            text-align: center;
-            min-height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .answer-input {
-            width: 120px;
-            padding: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            border: 3px solid #FF6B9D;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.95);
-            color: #2C3E50;
-            text-align: center;
-        }
-
-        .answer-input:focus {
-            outline: none;
-            border-color: #764ba2;
-            box-shadow: 0 0 10px rgba(118, 75, 162, 0.5);
-        }
-
-        /* Game Over Screen */
-        .game-over {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 500;
-            text-align: center;
-            color: white;
-            font-size: 36px;
-            font-weight: bold;
-        }
-
-        .game-over.show {
-            display: flex;
-        }
-
-        .game-over h1 {
-            font-size: 72px;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 0 #667eea;
-        }
-
-        .game-over p {
-            font-size: 28px;
-            margin-bottom: 30px;
-        }
-
-        .restart-btn {
-            padding: 15px 40px;
-            font-size: 24px;
-            background: #FF6B9D;
-            color: white;
-            border: none;
-            border-radius: 15px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: transform 0.2s;
-        }
-
-        .restart-btn:hover {
-            transform: scale(1.1);
-            background: #FF3D7F;
-        }
-
-        .restart-btn:active {
-            transform: scale(0.95);
-        }
-
-        /* Start Screen */
-        .start-screen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #57c0c2;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 400;
-            text-align: center;
-            color: white;
-        }
-
-        .start-screen.hidden {
-            display: none;
-        }
-
-        .start-screen h1 {
-            font-size: 64px;
-            margin-bottom: 20px;
-            text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
-            animation: bounce 2s infinite;
-        }
-
-        .start-screen p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            max-width: 600px;
-        }
-
-        .start-btn {
-            padding: 15px 50px;
-            font-size: 28px;
-            background: #FF6B9D;
-            color: white;
-            border: none;
-            border-radius: 15px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: transform 0.2s;
-            margin-bottom: 20px;
-        }
-
-        .start-btn:hover {
-            transform: scale(1.1);
-            background: #FF3D7F;
-        }
-
-        .start-btn:active {
-            transform: scale(0.95);
-        }
-
-        .difficulty-select {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .difficulty-btn {
-            padding: 10px 25px;
-            font-size: 18px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid white;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.2s;
-        }
-
-        .difficulty-btn:hover {
-            background: rgba(255, 255, 255, 0.4);
-            transform: scale(1.05);
-        }
-
-        .difficulty-btn.selected {
-            background: #FF6B9D;
-            border-color: #FF6B9D;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .instructions {
-            font-size: 14px;
-            margin-top: 30px;
-            max-width: 500px;
-            line-height: 1.6;
-        }
-    </style>
+ 
+  <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    footer {
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        background-color: #3f898a;
+        color: white;
+        align-content: center;
+        position: absolute;
+        bottom: 0;
+        font-family: "DM Sans", serif;
+        padding: 20px;
+        border-width: 1px;
+        border-top-style: solid;
+        font-family: 'Arial', Helvetica, sans-serif;
+    }
+    footer a{
+        color: white;
+    }
+    body {
+        font-family: 'Arial', sans-serif;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+
+    .game-container {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        height: 600px;
+        background: #57c0c2;
+        border: 8px solid #357475;
+        border-radius: 20px;
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Game Stats */
+    .game-stats {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+        font-size: 18px;
+        font-weight: bold;
+        color: #2C3E50;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+
+    .stat {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .stat-value {
+        color: #667eea;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .heart {
+        color: #FF6B9D;
+    }
+
+    .star {
+        color: #FFD700;
+    }
+
+    /* Canvas */
+    canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+    }
+
+    /* Input Area */
+    .input-area {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 500px;
+        display: flex;
+        gap: 10px;
+        z-index: 200;
+    }
+
+    .problem-display {
+        flex: 1;
+        padding: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        background: rgba(255, 255, 255, 0.95);
+        border: 3px solid #667eea;
+        border-radius: 10px;
+        color: #2C3E50;
+        text-align: center;
+        min-height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .answer-input {
+        width: 120px;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        border: 3px solid #FF6B9D;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.95);
+        color: #2C3E50;
+        text-align: center;
+    }
+
+    .answer-input:focus {
+        outline: none;
+        border-color: #764ba2;
+        box-shadow: 0 0 10px rgba(118, 75, 162, 0.5);
+    }
+
+    /* Game Over Screen */
+    .game-over {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 500;
+        text-align: center;
+        color: white;
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .game-over.show {
+        display: flex;
+    }
+
+    .game-over h1 {
+        font-size: 72px;
+        margin-bottom: 20px;
+        text-shadow: 3px 3px 0 #667eea;
+    }
+
+    .game-over p {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .restart-btn {
+        padding: 15px 40px;
+        font-size: 24px;
+        background: #FF6B9D;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: transform 0.2s;
+    }
+
+    .restart-btn:hover {
+        transform: scale(1.1);
+        background: #FF3D7F;
+    }
+
+    .restart-btn:active {
+        transform: scale(0.95);
+    }
+
+    /* Start Screen */
+    .start-screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #57c0c2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 400;
+        text-align: center;
+        color: white;
+    }
+
+    .start-screen.hidden {
+        display: none;
+    }
+
+    .start-screen h1 {
+        font-size: 64px;
+        margin-bottom: 20px;
+        text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+        animation: bounce 2s infinite;
+    }
+
+    .start-screen p {
+        font-size: 20px;
+        margin-bottom: 30px;
+        max-width: 600px;
+    }
+
+    .start-btn {
+        padding: 15px 50px;
+        font-size: 28px;
+        background: #FF6B9D;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: transform 0.2s;
+        margin-bottom: 20px;
+    }
+
+    .start-btn:hover {
+        transform: scale(1.1);
+        background: #FF3D7F;
+    }
+
+    .start-btn:active {
+        transform: scale(0.95);
+    }
+
+    .difficulty-select {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .difficulty-btn {
+        padding: 10px 25px;
+        font-size: 18px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: 2px solid white;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.2s;
+    }
+
+    .difficulty-btn:hover {
+        background: rgba(255, 255, 255, 0.4);
+        transform: scale(1.05);
+    }
+
+    .difficulty-btn.selected {
+        background: #FF6B9D;
+        border-color: #FF6B9D;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+
+    .instructions {
+        font-size: 14px;
+        margin-top: 20px;
+        max-width: 500px;
+        line-height: 0.6;
+    }
+    body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+        background: #f6f7fb;
+        color: #111;
+        line-height: 1.5;
+    }
+    footer {
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            background-color: #3f898a;
+            color: white;
+            align-content: center;
+            font-family: "DM Sans", serif;
+            padding: 20px;
+            border-width: 1px;
+            border-top-style: solid;
+            font-family: Arial, Helvetica, sans-serif;
+    }
+    footer a{
+            color: white;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .navbar {
+        background: #4ea5a7;
+        padding: 20px 30px;
+        text-align: center;
+        position: absolute;
+        top: 0;
+    }
+
+    .menu {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .item {
+        position: relative;
+    }
+
+    .menu a {
+        text-decoration: none;
+        color: #ffffff;
+        padding: 8px 14px;
+        border-radius: 20px;
+        display: inline-block;
+    }
+
+        .menu a:hover {
+        background: #357475;
+    }
+
+    .dropdown {
+        display: none;          
+        position: absolute;
+        background: #4ea5a7;
+        list-style: none;
+        padding: 8px;
+        border-radius: 12px;
+        min-width: 120px;
+    }
+
+    .item:hover > .dropdown,
+    .dropdown li:hover > .dropdown {
+        display: block;
+    }
+
+    .dropdown li {
+        position: relative;
+    }
+    .dropdown .dropdown {
+        top: 0px;;
+        left: 100%;
+    }
+</style>
 <body>
+<header style="background-color: #357475; height: 50px;">
+
+</header>
+<nav class="navbar">
+  <ul class="menu">
+    <li class="item">
+      <a href="">Lessons</a>
+      <ul class="dropdown">
+        <li>
+          <a href="">KS3</a>
+          <ul class="dropdown">
+            <li><a href="">Lesson 1</a></li>
+            <li><a href="">Lesson 2</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="">GCSE</a>
+          <ul class="dropdown">
+            <li><a href="">Lesson 1</a></li>
+            <li><a href="">Lesson 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li class="item"><a href="">Quizzes</a></li>
+    <li class="item"><a href="">About us</a></li>
+    <li class="item"><a href="">Contact us</a></li>
+  </ul>
+</nav>
     <div class="game-container">
         <div class="start-screen" id="startScreen">
             <h1>Math Game</h1>
@@ -399,7 +531,7 @@
                 this.y = -50;
                 this.width = 60;
                 this.height = 60;
-                this.speed = 0.2 + (difficulty === 'easy' ? 0 : difficulty === 'medium' ? 0.5 : 1);
+                this.speed = 0.2 + (difficulty === 'easy' ? 0 : difficulty === 'medium' ? 0.2 : 0.4);
                 
                 // Generate random math problem
                 const problemTypes = ['addition', 'subtraction', 'multiplication', 'division'];
@@ -670,4 +802,38 @@
         });
     </script>
 </body>
+
+<footer>
+    <div class="medium-logo">
+        <a href="index.html"><img src="Team project backup logo.jpg" width= 125px height=100px alt="Main website logo at bottom of page. Clickable to bring back to homepage."></a>
+    </div>
+    <div class="contact-details">
+        <p1 style="font-weight: 800; font-size: large;">Contact Details:</p1>
+        <br>
+        <a href="link"></i> Contact Us Page</a>
+        <br>
+        Email
+        <br>
+        Phone Number
+    </div>
+    <div class="developer-details">
+        <p3 style="font-weight: 800; font-size: large;">Developer Details</p3>
+        <br>
+        <a href="link"></i>Developer Details Page</a>
+    </div>
+    <div class="quizzes">
+        <p4 style="font-weight: 800; font-size: large;">Quizzes</p4>
+        <br>
+        <a href="link"></i> All quizzes Page??</a>
+        <br>
+    </div>
+    <div class="learning-tools">
+        <p4 style="font-weight: 800; font-size: large;">Learning Tools</p4>
+        <br>
+        <a href="link"></i> KS3</a>
+        <br>
+        <a href="link"></i> GCSE</a>
+        <br>
+    </div>
+</footer>
 </html>
