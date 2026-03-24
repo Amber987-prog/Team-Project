@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizzes | Maths Learning</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
+
+  <!-- Main site CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Multi-topic Quiz CSS -->
+  <link rel="stylesheet" href="multi-quiz.css">
+</head>
+
+<body>
+
+  <header class="top-bar"></header>
+
+  <nav class="navbar">
+    <ul class="menu">
+      <li class="item"><a href="index.html">Home</a></li>
+      <li class="item">
+        <a href="Lessons.html">Lessons</a>
+        <ul class="dropdown">
+          <li>
+            <a href="KS3.html">KS3</a>
+            <ul class="dropdown">
+              <li><a href="Addition.html">Addition</a></li>
+              <li><a href="Lesson 1 - Subtraction.html">Subtraction</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="GCSE page.html">GCSE</a>
+            <ul class="dropdown">
+              <li><a href="Lessions page 3 - Multiplication.html">Multiplication</a></li>
+              <li><a href="Division.html">Division</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="item"><a href="Quizzes.html" class="active">Quizzes</a></li>
+      <li class="item"><a href="AboutUs.html">About Us</a></li>
+      <li class="item"><a href="ContactUs.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <main class="quiz-page">
+    <section class="quiz-hero">
+      <h1><strong>Quizzes</strong></h1>
+      <p>Practise maths skills by completing the quizzes below. Each topic includes an interactive quiz and a link back to the matching lesson.</p>
+
+      <div class="quiz-quicklinks" aria-label="Quick links">
+        <a class="quiz-linkchip" href="KS3.html">KS3 Topics</a>
+        <a class="quiz-linkchip" href="GCSE page.html">GCSE Topics</a>
+        <a class="quiz-linkchip" href="Lessons.html">All Lessons</a>
+      </div>
+    </section>
+
+    <section class="quiz-grid" aria-label="Quiz topics">
+      <!-- Existing single-topic quizzes -->
+      <!-- Addition -->
+      <article class="quiz-card is-featured">
+        <h2>Addition</h2>
+        <p>Quick-fire questions to practise addition, including carrying.</p>
+        <div class="quiz-meta"><span>Level: KS3</span> <span>Time: 5-7 mins</span></div>
+        <div class="quiz-embed-large">
+          <iframe src="https://view.genially.com/698f2dbfbdc4721a09646ce9/interactive-content-math-quiz" title="Addition Quiz" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <a href="Addition.html" class="btn">Open Addition Lesson →</a>
+      </article>
+
+      <!-- Subtraction -->
+      <article class="quiz-card">
+        <h2>Subtraction</h2>
+        <p>Build confidence subtracting with and without exchanging.</p>
+        <div class="quiz-meta"><span>Level: KS3</span> <span>Time: 5-7 mins</span></div>
+        <div class="quiz-embed-large">
+          <iframe src="https://view.genially.com/698f2dbf72ae68eb82735093/interactive-content-math-quiz" title="Subtraction Quiz" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <a href="Lesson 1 - Subtraction.html" class="btn">Open Subtraction Lesson →</a>
+      </article>
+
+      <!-- Multiplication -->
+      <article class="quiz-card">
+        <h2>Multiplication</h2>
+        <p>Practise times tables and written multiplication methods.</p>
+        <div class="quiz-meta"><span>Level: GCSE</span> <span>Time: 6-8 mins</span></div>
+        <div class="quiz-embed-large">
+          <iframe src="https://view.genially.com/699399da1ec432eaecc63573" title="Multiplication Quiz" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <a href="Lessions page 3 - Multiplication.html" class="btn">Open Multiplication Lesson →</a>
+      </article>
+
+      <!-- Division -->
+      <article class="quiz-card">
+        <h2>Division</h2>
+        <p>Strengthen division skills, including remainders.</p>
+        <div class="quiz-meta"><span>Level: GCSE</span> <span>Time: 6-8 mins</span></div>
+        <div class="quiz-embed-large">
+          <iframe src="https://view.genially.com/69939b1ec7f1ffd742b864f8" title="Division Quiz" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <a href="Division.html" class="btn">Open Division Lesson →</a>
+      </article>
+    </section>
+
+    <section class="quiz-path" aria-label="Recommended quiz order">
+      <h2>Recommended Path</h2>
+      <div class="path-row">
+        <span class="path-step">Addition</span>
+        <span class="path-arrow">→</span>
+        <span class="path-step">Subtraction</span>
+        <span class="path-arrow">→</span>
+        <span class="path-step">Multiplication</span>
+        <span class="path-arrow">→</span>
+        <span class="path-step">Division</span>
+      </div>
+    </section>
+
+    <section class="quiz-info">
+      <h2>How the Quizzes Work</h2>
+      <ul>
+        <li>Select a quiz and complete the activity on this page.</li>
+        <li>Use the lesson buttons to revise the topic before or after the quiz.</li>
+        <li>Scores are shown within the quiz activity.</li>
+        <li>Quizzes can be repeated for extra practice.</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- Multi-Topic Quiz Embed -->
+    <div id="multiQuizEmbed"></div>
+
+    <section class="quiz-hero">
+      <h1>Games</h1>
+      <div class="game-container">
+        <div class="start-screen" id="startScreen">
+            <h1>Math Game</h1>
+            <p>Solve math problems to defeat your enemies!</p>
+            
+            <div>
+                <button class="start-btn" id="startBtn">START GAME</button>
+            </div>
+
+            <div>
+                <p style="font-size: 16px; margin-bottom: 10px;">Select Difficulty:</p>
+                <div class="difficulty-select">
+                    <button class="difficulty-btn selected" data-difficulty="easy">Easy</button>
+                    <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+                    <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <p><strong>How to Play:</strong></p>
+                <p>Read the math problem that appears on enemies</p>
+                <p>Type your answer in the input box</p>
+                <p>Press Enter to cast a spell and damage the enemy</p>
+                <p>You have 3 lives - try to survive as long as possible!</p>
+            </div>
+        </div>
+
+        <div class="game-stats" id="gameStats">
+            <div class="stat">
+                <span class="heart">❤️</span>
+                <span>Lives:</span>
+                <span class="stat-value" id="livesDisplay">3</span>
+            </div>
+            <div class="stat">
+                <span class="star">⭐</span>
+                <span>Score:</span>
+                <span class="stat-value" id="scoreDisplay">0</span>
+            </div>
+            <div class="stat">
+                <span>Level:</span>
+                <span class="stat-value" id="levelDisplay">1</span>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <div class="input-area" id="inputArea">
+            <div class="problem-display" id="problemDisplay">Solve the problem!</div>
+            <input 
+                type="text" 
+                class="answer-input" 
+                id="answerInput" 
+                placeholder="Answer" 
+                disabled
+            >
+        </div>
+
+        <div class="game-over" id="gameOver">
+            <h1>GAME OVER</h1>
+            <p id="finalScore">Final Score: 0</p>
+            <button class="restart-btn" id="restartBtn">PLAY AGAIN</button>
+        </div>
+      </div>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const problemDisplay = document.getElementById('problemDisplay');
+        const answerInput = document.getElementById('answerInput');
+        const livesDisplay = document.getElementById('livesDisplay');
+        const scoreDisplay = document.getElementById('scoreDisplay');
+        const levelDisplay = document.getElementById('levelDisplay');
+        const gameOverScreen = document.getElementById('gameOver');
+        const finalScoreDisplay = document.getElementById('finalScore');
+        const startScreen = document.getElementById('startScreen');
+        const startBtn = document.getElementById('startBtn');
+        const restartBtn = document.getElementById('restartBtn');
+        const difficultyBtns = document.querySelectorAll('.difficulty-btn');
+
+        // Set canvas size
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = canvas.parentElement.clientHeight;
+
+        // Game variables
+        let gameActive = false;
+        let gameRunning = false;
+        let score = 0;
+        let lives = 3;
+        let level = 1;
+        let difficulty = 'easy';
+        let spawnRate = 200;
+        let spawnCounter = 0;
+        let correctAnswer = null;
+        let currentProblem = '';
+
+        // Game objects
+        const player = {
+            x: canvas.width / 2,
+            y: canvas.height - 80,
+            width: 50,
+            height: 50,
+            draw: function() {
+                ctx.font = '40px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('🏄‍♂️', this.x, this.y);
+            }
+        };
+
+        const enemies = [];
+        const spells = [];
+
+        // Enemy class
+        class Enemy {
+            constructor() {
+                this.x = Math.random() * (canvas.width - 60) + 30;
+                this.y = -50;
+                this.width = 60;
+                this.height = 60;
+                this.speed = 0.2 + (difficulty === 'easy' ? 0 : difficulty === 'medium' ? 0.2 : 0.4);
+                
+                // Generate random math problem
+                const problemTypes = ['addition', 'subtraction', 'multiplication', 'division'];
+                const types = difficulty === 'easy' ? ['addition', 'subtraction'] : 
+                             difficulty === 'medium' ? ['addition', 'subtraction', 'multiplication'] : 
+                             problemTypes;
+                
+                const type = types[Math.floor(Math.random() * types.length)];
+                const max = difficulty === 'easy' ? 10 : difficulty === 'medium' ? 20 : 50;
+                
+                const a = Math.ceil(Math.random() * max);
+                const b = Math.ceil(Math.random() * Math.max(max / 2, 1));
+                
+                let problem, answer;
+                
+                if (type === 'addition') {
+                    problem = `${a} + ${b}`;
+                    answer = a + b;
+                } else if (type === 'subtraction') {
+                    problem = `${Math.max(a, b)} - ${Math.min(a, b)}`;
+                    answer = Math.max(a, b) - Math.min(a, b);
+                } else if (type === 'multiplication') {
+                    problem = `${a} × ${b}`;
+                    answer = a * b;
+                } else {
+                    problem = `${a * b} ÷ ${a}`;
+                    answer = b;
+                }
+                
+                this.problem = problem;
+                this.answer = answer;
+                this.health = 1;
+            }
+
+            update() {
+                this.y += this.speed;
+            }
+
+            draw() {
+                // Enemy body (demon/enemy face)
+                ctx.font = 'bold 40px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('🦈', this.x, this.y);
+                
+                // Problem text
+                ctx.font = 'bold 12px Arial';
+                ctx.fillStyle = '#FF0000';
+                ctx.fillText(this.problem, this.x, this.y + 25);
+                
+                // Health bar
+                ctx.fillStyle = '#FF6B9D';
+                ctx.fillRect(this.x - 25, this.y + 30, 50 * this.health, 5);
+                ctx.strokeStyle = '#333';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(this.x - 25, this.y + 30, 50, 5);
+            }
+
+            isOffScreen() {
+                return this.y > canvas.height;
+            }
+        }
+
+        // Spell class
+        class Spell {
+            constructor(fromX, fromY) {
+                this.x = fromX;
+                this.y = fromY;
+                this.width = 15;
+                this.height = 15;
+                this.speed = 8;
+                this.color = '#FFD700';
+            }
+
+            update() {
+                this.y -= this.speed;
+            }
+
+            draw() {
+                ctx.fillStyle = '#FFD700';
+                ctx.shadowColor = '#FFFF00';
+                ctx.shadowBlur = 15;
+                ctx.fillRect(this.x - 7, this.y - 7, 15, 15);
+                ctx.shadowBlur = 0;
+            }
+
+            isOffScreen() {
+                return this.y < 0;
+            }
+        }
+
+        // Difficulty selection
+        difficultyBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                difficultyBtns.forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                difficulty = btn.dataset.difficulty;
+            });
+        });
+
+        // Start game
+        startBtn.addEventListener('click', () => {
+            startScreen.classList.add('hidden');
+            gameActive = true;
+            gameRunning = true;
+            answerInput.disabled = false;
+            answerInput.focus();
+            
+            if (enemies.length === 0) {
+                spawnEnemy();
+            }
+            
+            gameLoop();
+        });
+
+        // Restart game
+        restartBtn.addEventListener('click', () => {
+            score = 0;
+            lives = 3;
+            level = 1;
+            spawnRate = 200;
+            enemies.length = 0;
+            spells.length = 0;
+            gameOverScreen.classList.remove('show');
+            startScreen.classList.remove('hidden');
+            gameActive = false;
+            gameRunning = false;
+            answerInput.disabled = true;
+            answerInput.value = '';
+        });
+
+        // Input handler
+        answerInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && gameRunning && enemies.length > 0) {
+                const userAnswer = parseInt(answerInput.value);
+                
+                if (userAnswer === enemies[0].answer) {
+                    // Correct answer - cast spell
+                    spells.push(new Spell(player.x, player.y));
+                    enemies[0].health -= 1;
+                    
+                    if (enemies[0].health <= 0) {
+                        enemies.shift();
+                        score += 10 * level;
+                        
+                        // Level up
+                        if (score % 100 === 0) {
+                            level++;
+                            spawnRate = Math.max(100, 200 - level * 10);
+                        }
+                    }
+                } else {
+                    // Wrong answer - lose a life
+                    lives--;
+                    if (lives <= 0) {
+                        endGame();
+                    }
+                }
+                
+                answerInput.value = '';
+                
+                if (enemies.length > 0) {
+                    problemDisplay.textContent = enemies[0].problem;
+                }
+            }
+        });
+
+        function spawnEnemy() {
+            enemies.push(new Enemy());
+            if (enemies.length === 1) {
+                problemDisplay.textContent = enemies[0].problem;
+            }
+        }
+
+        function endGame() {
+            gameRunning = false;
+            gameOverScreen.classList.add('show');
+            finalScoreDisplay.textContent = `Final Score: ${score}`;
+            answerInput.disabled = true;
+        }
+
+        function gameLoop() {
+            if (!gameRunning) {
+                return;
+            }
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Spawn enemies
+            spawnCounter++;
+            if (spawnCounter > spawnRate && enemies.length < 3 + level) {
+                spawnEnemy();
+                spawnCounter = 0;
+            }
+
+            // Update and draw enemies
+            for (let i = enemies.length - 1; i >= 0; i--) {
+                enemies[i].update();
+                enemies[i].draw();
+
+                // Check if enemy reached bottom
+                if (enemies[i].isOffScreen()) {
+                    enemies.splice(i, 1);
+                    lives--;
+                    
+                    if (lives <= 0) {
+                        endGame();
+                        return;
+                    }
+                    
+                    if (enemies.length > 0) {
+                        problemDisplay.textContent = enemies[0].problem;
+                    } else {
+                        problemDisplay.textContent = 'Next enemy coming...';
+                    }
+                }
+            }
+
+            // Update and draw spells
+            for (let i = spells.length - 1; i >= 0; i--) {
+                spells[i].update();
+                spells[i].draw();
+
+                if (spells[i].isOffScreen()) {
+                    spells.splice(i, 1);
+                }
+            }
+
+            // Draw player
+            player.draw();
+
+            // Draw particles/effects
+            drawParticles();
+
+            // Update UI
+            livesDisplay.textContent = lives;
+            scoreDisplay.textContent = score;
+            levelDisplay.textContent = level;
+
+            requestAnimationFrame(gameLoop);
+        }
+
+        function drawParticles() {
+            // Just adding visual flair with some stars around the player
+            const time = Date.now();
+            const stars = ['💦', '🫧', '🫧'];
+            
+            for (let i = 0; i < 3; i++) {
+                const angle = (time / 500 + i * Math.PI * 2 / 3) % (Math.PI * 2);
+                const x = player.x + Math.cos(angle) * 40;
+                const y = player.y + Math.sin(angle) * 40;
+                ctx.font = '16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(stars[i], x, y);
+            }
+        }
+
+        // Auto-focus input when clicking the game area
+        canvas.addEventListener('click', () => {
+            if (gameRunning) {
+                answerInput.focus();
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            // Optional: handle resize
+        });
+    </script>
+    </section>
+
+  </main>
+
+  <footer>
+    <!-- Footer content same as your previous code -->
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Multi-topic Quiz JS -->
+  <script src="script.js" defer></script>
+
+</body>
+</html>
