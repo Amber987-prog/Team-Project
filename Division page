@@ -1,0 +1,520 @@
+HTML 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Division</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="top-bar"></header>
+
+  <nav class="navbar">
+    <ul class="menu">
+      <li class="item">
+        <a href="">Lessons</a>
+        <ul class="dropdown">
+          <li>
+            <a href="">KS3</a>
+            <ul class="dropdown">
+              <li><a href="">Lesson 1</a></li>
+              <li><a href="">Lesson 2</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">GCSE</a>
+            <ul class="dropdown">
+              <li><a href="">Lesson 1</a></li>
+              <li><a href="">Lesson 2</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li class="item"><a href="">Quizzes</a></li>
+      <li class="item"><a href="">About us</a></li>
+      <li class="item"><a href="">Contact us</a></li>
+    </ul>
+  </nav>
+
+  <main class="lesson-page">
+
+    <section class="lesson-hero">
+      <h1>Lesson 4</h1>
+      <h2>Division</h2>
+      <p class="lesson-intro">
+        Learn how to divide numbers step-by-step, then take the quiz to earn Bronze, Silver or Gold.
+      </p>
+    </section>
+
+    <section class="lesson-grid">
+
+      <article class="lesson-content">
+
+        <div class="lesson-image" role="img" aria-label="Division diagram or example image">
+          <img src="DivisionPageImage.jpg" alt="Division diagram or example image">
+        </div>
+
+        <div class="lesson-card">
+          <h2>Lesson 4</h2>
+
+          <h3>Division</h3>
+          <p>
+            Division is a method of splitting a total amount into smaller or equal parts. It is represented with the ÷ symbol or the forward slash /. Division is the inverse of multiplication, and portrays the grouping/sharing of numbers, which can often result in a remainder if the calculation is not split up equally.
+          </p>
+
+          <h3>Key Terminology</h3>
+          <ul>
+            <li><strong>Dividend</strong> – the specific number that is being divided</li>
+            <li><strong>Divisor</strong> – the specific number that is dividing by</li>
+            <li><strong>Quotient</strong> – the final answer</li>
+            <li><strong>Remainder</strong> – what is remaining after division</li>
+          </ul>
+
+          <h3>Worked examples</h3>
+          <p><strong>Example 1:</strong> 15 ÷ 5 = 3</p>
+          <p><strong>Example 2:</strong> 144 ÷ 12 = 12</p>
+          <p><strong>Example 3:</strong> 21 ÷ 5 = 4 remainder 1</p>
+        </div>
+
+        <div class="lesson-card2">
+          <h3>Now it's your turn!</h3>
+
+          <form class="practice-form" id="practiceForm">
+            <ol class="practice-list">
+              <li>
+                <label for="q1">36 ÷ 9 =</label>
+                <input id="q1" name="q1" type="text" inputmode="numeric" placeholder="Answer">
+              </li>
+
+              <li>
+                <label for="q2">45 ÷ 5 =</label>
+                <input id="q2" name="q2" type="text" inputmode="numeric" placeholder="Answer">
+              </li>
+
+              <li>
+                <label for="q3">29 ÷ 4 =</label>
+                <input id="q3" name="q3" type="text" placeholder="Answer (e.g. 7 r 1)">
+              </li>
+            </ol>
+
+            <div class="practice-actions">
+              <button class="btn secondary" type="submit">Check Answers</button>
+              <button class="btn secondary" type="button" id="practiceReset">Reset</button>
+            </div>
+
+            <p class="practice-feedback" id="practiceFeedback" aria-live="polite"></p>
+          </form>
+        </div>
+
+      </article>
+
+      <aside class="lesson-side">
+
+        <div class="side-card">
+          <h2>Time for a Division Quiz!</h2>
+          <p>Ready to test your knowledge?</p>
+
+          <div class="quiz-embed">
+            <iframe
+              src="https://view.genially.com/69939b1ec7f1ffd742b864f8"
+              title="Division Quiz"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="side-card">
+          <h2>Recent Quiz Results</h2>
+
+          <div class="mini-board">
+            <div class="row">
+              <span class="badge silver">Silver</span>
+              <span class="user">You</span>
+              <span class="score">8/10</span>
+            </div>
+          </div>
+
+          <a class="link" href="">View Full Leaderboard →</a>
+        </div>
+
+      </aside>
+    </section>
+
+    <section class="results-grid">
+      <div class="results-card">
+        <h2>Overall Quiz Results</h2>
+
+        <div class="results-table">
+          <div class="row">
+            <span class="badge gold">Gold</span>
+            <span class="user">Username</span>
+            <span class="score">9/10</span>
+          </div>
+          <div class="row">
+            <span class="badge silver">Silver</span>
+            <span class="user">Username</span>
+            <span class="score">7/10</span>
+          </div>
+          <div class="row">
+            <span class="badge bronze">Bronze</span>
+            <span class="user">Username</span>
+            <span class="score">5/10</span>
+          </div>
+        </div>
+
+        <a class="link" href="">View Full Leaderboard →</a>
+      </div>
+
+      <div class="results-card">
+        <h2>Your Score!</h2>
+        <p class="big-score">You Scored <strong>8/10</strong></p>
+        <p class="medal-text">Rank: Silver</p>
+        <a class="btn secondary" href="https://view.genially.com/69939b1ec7f1ffd742b864f8" target="_blank">
+          Review Answers →
+        </a>
+      </div>
+    </section>
+
+    <section class="lesson-nav">
+      <a class="btn secondary" href="lessons.html">← Back to KS3</a>
+      <a class="btn secondary" href="quiz-play.html">Quiz &amp; Play →</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="medium-logo">
+      <a href="index.html">
+        <img src="Team project backup logo.jpg" width="125" height="100"
+             alt="Main website logo at bottom of page. Clickable to bring back to homepage.">
+      </a>
+    </div>
+
+    <div class="contact-details">
+      <p class="footer-title">Contact Details:</p>
+      <a href="ContactUs.html">Contact Us Page</a><br>
+      Email<br>
+      Phone Number
+    </div>
+
+    <div class="developer-details">
+      <p class="footer-title">Developer Details</p>
+      <a href="">Developer Details Page</a>
+    </div>
+
+    <div class="quizzes">
+      <p class="footer-title">Quizzes</p>
+      <a href="">All quizzes</a>
+    </div>
+
+    <div class="learning-tools">
+      <p class="footer-title">Learning Tools</p>
+      <a href="">KS3</a><br>
+      <a href="">GCSE</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+
+CSS
+
+.lesson-page{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 16px 60px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+
+
+.lesson-hero h1{
+  margin: 0 0 10px;
+  font-size: clamp(32px, 4vw, 44px);
+  letter-spacing: -0.5px;
+}
+
+.lesson-intro{
+  margin: 0;
+  opacity: 0.85;
+  max-width: 700px;
+}
+
+
+
+.lesson-grid{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 28px;
+  margin-top: 24px;
+  align-items: start;
+}
+
+
+
+.lesson-image img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px dashed rgba(0,0,0,0.25);
+  background: #f2f4f8;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  font-weight: 600;
+  color: rgba(0,0,0,0.6);
+}
+
+
+
+.lesson-card,
+.lesson-card2,
+.side-card,
+.results-card{
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+}
+
+.lesson-card h2,
+.lesson-card2 h2,
+.side-card h2,
+.results-card h2{
+  margin-top: 0;
+}
+
+
+
+.lesson-side{
+  display: grid;
+  gap: 20px;
+}
+
+
+
+.mini-board .row,
+.results-table .row{
+  display: grid;
+  grid-template-columns: 90px 1fr 60px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.mini-board .row:last-child,
+.results-table .row:last-child{
+  border-bottom: none;
+}
+
+.user{
+  font-weight: 500;
+}
+
+.score{
+  text-align: right;
+  font-weight: 600;
+}
+
+
+
+.badge{
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.gold{
+  background: #fff3bf;
+}
+
+.silver{
+  background: #e9ecef;
+}
+
+.bronze{
+  background: #f1d0b5;
+}
+
+
+
+.btn{
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.btn:hover{
+  filter: brightness(1.1);
+}
+
+.btn.secondary{
+  background: #f2f4f8;
+  color: #111;
+  border: 1px solid rgba(0,0,0,0.12);
+}
+
+
+
+.results-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.big-score{
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.medal-text{
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+
+
+.lesson-nav{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 12px;
+}
+
+
+
+@media (max-width: 900px){
+
+  .lesson-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .results-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-nav{
+    flex-direction: column;
+  }
+}
+
+
+
+.practice-form{
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+  max-width: fit-content;
+}
+
+.practice-list{
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.practice-list li{
+  display: grid;
+  gap: 8px;
+}
+
+.practice-list label{
+  font-weight: 600;
+}
+
+.practice-list input{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.18);
+  font-size: 15px;
+  outline: none;
+}
+
+.practice-list input:focus{
+  border-color: rgba(0,0,0,0.45);
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.08);
+}
+
+
+.practice-actions{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.practice-feedback{
+  margin: 0;
+  font-weight: 700;
+}
+
+.quiz-embed{
+  margin-top: 14px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.quiz-embed iframe{
+  width: 100%;
+  height: 300px;   
+  border: none;
+  display: block;
+}
+
+JavaScript 
+
+const form = document.getElementById("practiceForm");
+const feedback = document.getElementById("practiceFeedback");
+const resetBtn = document.getElementById("practiceReset");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let score = 0;
+
+  const q1 = document.getElementById("q1").value;
+  const q2 = document.getElementById("q2").value;
+  const q3 = document.getElementById("q3").value;
+
+  if (q1 == 4) {
+    score++;
+  }
+
+  if (q2 == 9) {
+    score++;
+  }
+
+  if (q3 == "7 r 1") {
+    score++;
+  }
+
+  feedback.textContent = "Practice score: " + score + "/3";
+});
+
+
+resetBtn.addEventListener("click", function() {
+  form.reset();               
+  feedback.textContent = "";  
+});

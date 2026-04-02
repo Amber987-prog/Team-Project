@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GCSE</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <header style="background-color: #357475; height: 2rem;">
+ 
+</header>
+<nav class="navbar">
+  <ul class="menu">
+    <a href="Index.html">Home</a>
+    <li class="item">
+      <a href="Lessons.html">Lessons</a>
+      <ul class="dropdown">
+        <li>
+          <a href="KS3.html">KS3</a>
+          <ul class="dropdown">
+            <li><a href="Addition.html">Addition</a></li>
+            <li><a href="Lesson 1 - Subtraction.html">Subtraction</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="GCSE page.html">GCSE</a>
+          <ul class="dropdown">
+            <li><a href="Lessions page 3 - Multiplication.html">Multiplication</a></li>
+            <li><a href="Division.html">Division</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+ 
+    <li class="item"><a href="Quizzes.html">Quizzes</a></li>
+    <li class="item"><a href="AboutUs.html">About us</a></li>
+    <li class="item"><a href="ContactUs.html">Contact us</a></li>
+  </ul>
+</nav>
+ 
+    <main class="page">
+      <section class="hero">
+        <div class="hero-text">
+          <h1>GCSE</h1>
+          <p>
+            GCSE Maths lessons and quizzes to provide a positive and active
+            learning experience.
+          </p>
+          <a class="link" href="#"><strong>View Lessons →</strong></a>
+        </div>
+        <div class="hero-image"></div>
+      </section>
+ 
+      <h2 class="section-title">Choose a Topic</h2>
+ 
+      <section class="topic-grid">
+        <div class="topic-card">
+          <div class="topic-image"></div>
+          <h3>Multiplication</h3>
+        </div>
+        <div class="topic-card">
+          <div class="topic-image"></div>
+          <h3>Division</h3>
+        </div>
+      </section>
+ 
+      <section class="quiz-section">
+        <div class="quiz-image"></div>
+        <div class="quiz-text">
+          <h2>Try out some quizzes</h2>
+          <p>
+            Try quizzes designed to help students improve speed and accuracy.
+            Earn Bronze, Silver or Gold based on the final score.
+          </p>
+          <a class="link" href="#"><strong>View Quizzes →</strong></a>
+        </div>
+      </section>
+    </main>
+</body>
+    <footer>
+    <div class="medium-logo">
+        <a href="index.html"><img src="Team project backup logo.jpg" width= 125px height=100px alt="Main website logo at bottom of page. Clickable to bring back to homepage."></a>
+    </div>
+    <div class="contact-details">
+        <p1 style="font-weight: 800; font-size: large;">Contact Details:</p1>
+        <br>
+        <a href="link"></i> Contact Us Page</a>
+        <br>
+        Email
+        <br>
+        Phone Number
+    </div>
+    <div class="developer-details">
+        <p3 style="font-weight: 800; font-size: large;">Developer Details</p3>
+        <br>
+        <a href="link"></i>Developer Details Page</a>
+    </div>
+    <div class="quizzes">
+        <p4 style="font-weight: 800; font-size: large;">Quizzes</p4>
+        <br>
+        <a href="Quizzes.html"></i> All quizzes Page??</a>
+        <br>
+    </div>
+    <div class="learning-tools">
+        <p4 style="font-weight: 800; font-size: large;">Learning Tools</p4>
+        <br>
+        <a href="KS3.html"></i> KS3</a>
+        <br>
+        <a href="GCSE page.html"></i> GCSE</a>
+        <br>
+    </div>
+</footer>
+ 
+</html>
+ 
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+  }
+ 
+  .navbar {
+    background: #57c0c2;
+    padding: 15px 30px;
+    text-align: center;
+  }
+ 
+  .menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+ 
+  .item {
+    position: relative;
+  }
+ 
+  .menu a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+ 
+  .menu a:hover {
+    background: #357475;
+  }
+ 
+  .dropdown {
+    display: none;
+    position: absolute;
+    background: #4ea5a7;
+    list-style: none;
+    padding: 8px;
+    border-radius: 12px;
+    min-width: 110px;
+  }
+ 
+  .item:hover > .dropdown,
+  .dropdown li:hover > .dropdown {
+    display: block;
+  }
+ 
+  .dropdown li {
+    position: relative;
+  }
+  .dropdown .dropdown {
+    top: 0;
+    left: 100%;
+  }
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+  }
+ 
+  .hero,
+  .quiz-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 6rem;
+  }
+ 
+  .hero-image,
+  .quiz-image {
+    background: #f3f3f3;
+    border-radius: 12px;
+    height: 260px;
+  }
+ 
+  .hero-text h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+ 
+  .hero-text p,
+  .quiz-text p {
+    max-width: 420px;
+    color: #000000;
+    margin-bottom: 1.5rem;
+  }
+ 
+  .section-title {
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+  }
+ 
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 6rem;
+  }
+ 
+  .topic-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  }
+ 
+  .topic-image {
+    height: 120px;
+    background: #f1f1f1;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+  }
+ 
+  .link {
+    text-decoration: none;
+    color: #000;
+  }
+ 
+  .link:hover {
+    text-decoration: underline;
+  }
+ 
+  .site-footer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: #3f898a;
+    color: #fff;
+    padding: 20px;
+  }
+ 
+  .site-footer a {
+    color: #fff;
+  }
+ 
+  @media (max-width: 900px) {
+    .hero,
+    .quiz-section,
+    .topic-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+ 
+    .hero-text p,
+    .quiz-text p {
+      margin: 0 auto 1.5rem;
+    }
+  }
+  footer {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    background-color: #3f898a;
+    color: white;
+    align-content: center;
+    font-family: "DM Sans", serif;
+    padding: 20px;
+    border-width: 1px;
+    border-top-style: solid;
+    font-family: Arial, Helvetica, sans-serif;
+}
+footer a{
+    color: white;
+}
+</style>
+ 
+ 

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Addition</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="top-bar"></header>
+
+  <nav class="navbar">
+    <ul class="menu">
+      <li class="item">
+        <a href="">Lessons</a>
+        <ul class="dropdown">
+          <li>
+            <a href="KS3.html">KS3</a>
+            <ul class="dropdown">
+              <li><a href="">Addition</a></li>
+              <li><a href="">Subtraction</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">GCSE</a>
+            <ul class="dropdown">
+              <li><a href="">Multiplication</a></li>
+              <li><a href="Division.html">Division</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li class="item"><a href="">Quizzes</a></li>
+      <li class="item"><a href="">About us</a></li>
+      <li class="item"><a href="ContactUs.html">Contact us</a></li>
+    </ul>
+  </nav>
+
+  <main class="lesson-page" data-lesson="division">
+
+    <section class="lesson-hero">
+      <h1>Lesson 4</h1>
+      <h2>Division</h2>
+      <p class="lesson-intro">
+        Learn how to divide numbers step-by-step, then take the quiz to earn Bronze, Silver or Gold.
+      </p>
+    </section>
+
+    <section class="lesson-grid">
+
+      <article class="lesson-content">
+
+        <div class="lesson-image" role="img" aria-label="Division diagram or example image">
+          <img src="DivisionPageImage.jpg" alt="Division diagram or example image">
+        </div>
+
+        <div class="lesson-card">
+
+          <h3>What is Division?</h3>
+          <p>
+            Division is a method of splitting a total amount into smaller or equal parts. It is represented with the ÷ symbol or the forward slash /. Division is the inverse of multiplication, and portrays the grouping/sharing of numbers, which can often result in a remainder if the calculation is not split up equally.
+          </p>
+
+          <h3>Key Terminology</h3>
+          <ul>
+            <li><strong>Dividend</strong> – the specific number that is being divided</li>
+            <li><strong>Divisor</strong> – the specific number that is dividing by</li>
+            <li><strong>Quotient</strong> – the final answer</li>
+            <li><strong>Remainder</strong> – what is remaining after division</li>
+          </ul>
+
+          <h3>Worked examples</h3>
+          <p><strong>Example 1:</strong> 15 ÷ 5 = 3</p>
+          <p><strong>Example 2:</strong> 144 ÷ 12 = 12</p>
+          <p><strong>Example 3:</strong> 21 ÷ 5 = 4 remainder 1</p>
+        </div>
+
+        <div class="lesson-card2">
+          <h3>Now it's your turn!</h3>
+
+          <form class="practice-form" id="practiceForm">
+            <ol class="practice-list">
+              <li>
+                <label for="q1">36 ÷ 9 =</label>
+                <input id="q1" name="q1" type="text" inputmode="numeric" placeholder="Answer">
+              </li>
+
+              <li>
+                <label for="q2">45 ÷ 5 =</label>
+                <input id="q2" name="q2" type="text" inputmode="numeric" placeholder="Answer">
+              </li>
+
+              <li>
+                <label for="q3">29 ÷ 4 =</label>
+                <input id="q3" name="q3" type="text" placeholder="Answer (e.g. 7 r 1)">
+              </li>
+            </ol>
+
+            <div class="practice-actions">
+              <button class="btn secondary" type="submit">Check Answers</button>
+              <button class="btn secondary" type="button" id="practiceReset">Reset</button>
+            </div>
+
+            <p class="practice-feedback" id="practiceFeedback" aria-live="polite"></p>
+          </form>
+        </div>
+
+      </article>
+
+      <aside class="lesson-side">
+
+        <div class="side-card">
+          <h2>Time for a Division Quiz!</h2>
+          <p>Ready to test your knowledge?</p>
+
+          <div class="quiz-embed">
+            <iframe
+              src="https://view.genially.com/69939b1ec7f1ffd742b864f8"
+              title="Division Quiz"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="side-card">
+          <h2>Recent Quiz Results</h2>
+
+          <div class="mini-board">
+            <div class="row">
+              <span class="badge silver">Silver</span>
+              <span class="user">You</span>
+              <span class="score">8/10</span>
+            </div>
+          </div>
+
+          <a class="link" href="">View Full Leaderboard →</a>
+        </div>
+
+      </aside>
+    </section>
+
+    <section class="results-grid">
+      <div class="results-card">
+        <h2>Overall Quiz Results</h2>
+
+        <div class="results-table">
+          <div class="row">
+            <span class="badge gold">Gold</span>
+            <span class="user">Username</span>
+            <span class="score">9/10</span>
+          </div>
+          <div class="row">
+            <span class="badge silver">Silver</span>
+            <span class="user">Username</span>
+            <span class="score">7/10</span>
+          </div>
+          <div class="row">
+            <span class="badge bronze">Bronze</span>
+            <span class="user">Username</span>
+            <span class="score">5/10</span>
+          </div>
+        </div>
+
+        <a class="link" href="">View Full Leaderboard →</a>
+      </div>
+
+      <div class="results-card">
+        <h2>Your Score!</h2>
+        <p class="big-score">You Scored <strong>8/10</strong></p>
+        <p class="medal-text">Rank: Silver</p>
+        <a class="btn secondary" href="https://view.genially.com/69939b1ec7f1ffd742b864f8" target="_blank">
+          Review Answers →
+        </a>
+      </div>
+    </section>
+
+    <section class="lesson-nav">
+      <a class="btn secondary" href="KS3.html">← Back to KS3</a>
+      <a class="btn secondary" href="quiz-play.html">Quiz &amp; Play →</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="medium-logo">
+      <a href="index.html">
+        <img src="Team project backup logo.jpg" width="125" height="100"
+             alt="Main website logo at bottom of page. Clickable to bring back to homepage.">
+      </a>
+    </div>
+
+    <div class="contact-details">
+      <p class="footer-title">Contact Details:</p>
+      <a href="ContactUs.html">Contact Us Page</a><br>
+      Email<br>
+      Phone Number
+    </div>
+
+    <div class="developer-details">
+      <p class="footer-title">Developer Details</p>
+      <a href="">Developer Details Page</a>
+    </div>
+
+    <div class="quizzes">
+      <p class="footer-title">Quizzes</p>
+      <a href="">All quizzes</a>
+    </div>
+
+    <div class="learning-tools">
+      <p class="footer-title">Learning Tools</p>
+      <a href="KS3.html">KS3</a><br>
+      <a href="">GCSE</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
